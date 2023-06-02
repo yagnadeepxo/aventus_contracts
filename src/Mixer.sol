@@ -53,7 +53,7 @@ contract Tornado is ReentrancyGuard {
     error TransferReverted();
 
     modifier checkCoinSize() {
-        if (msg.value != 0.1 ether || msg.value != 1 ether)
+        if (msg.value != 0.1 ether && msg.value != 1 ether)
             revert InvalidCoinSize();
         _;
     }
